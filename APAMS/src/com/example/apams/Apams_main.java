@@ -101,7 +101,7 @@ public class Apams_main extends Activity
     	Intent intent =new Intent(this,Apams_LoginActivity.class);
     }
     
-    //start the camara activity;
+    //start the camera activity;
     public void gotoCamara(View view){
     	Intent intent = new Intent(this, Apams_CamaraActivity.class);
     	startActivity(intent);
