@@ -3,10 +3,12 @@
     package="com.example.apams"
     android:versionCode="1"
     android:versionName="1.0" >
-	<uses-permission android:name = "android.permission.CAMERA" />
-	<uses-permission android:name="android.permmission.WRITE_EXTERNAL_STORAGE" />
 
-	<uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permmission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
     <uses-sdk
         android:minSdkVersion="19"
         android:targetSdkVersion="19" />
@@ -53,6 +55,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.apams.Apams_addNewActivity"
+            android:label="@string/title_activity_apams_add_new" >
         </activity>
     </application>
 

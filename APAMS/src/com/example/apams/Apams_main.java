@@ -99,6 +99,12 @@ public class Apams_main extends Activity
     }
     public void gotoLogin(View view){
     	Intent intent =new Intent(this,Apams_LoginActivity.class);
+    	startActivity(intent);
+    }
+    
+    public void gotoAddNew(View view){
+    	Intent intent = new Intent(this, Apams_addNewActivity.class);
+    	startActivity(intent);
     }
     
     //start the camera activity;
@@ -111,7 +117,6 @@ public class Apams_main extends Activity
     public void gotoDatabase(View view){
     	Intent intent = new Intent(this, AssetListActivity.class);
     	startActivity(intent);
-
     }
     
     //start the map activity;

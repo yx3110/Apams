@@ -22,5 +22,9 @@
     <string name="camera_format">Barcode Type</string>
     <string name="dummy_content">Dummy</string>
     <string name="camera_content">Barcode Content</string>
+    <string name="Map">Map</string>
+    <string name="button_add">Add new asset</string>
+    <string name="title_activity_apams_add_new">Apams_addNewActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

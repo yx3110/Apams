@@ -20,9 +20,8 @@
         android:layout_above="@+id/button2"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="28dp"
-        android:text="Map" 
         android:onClick="gotoMap"
-        />
+        android:text="@string/Map" />
 
     <Button
         android:id="@+id/Camara_Button"
@@ -42,5 +41,15 @@
         android:layout_marginTop="48dp"
         android:text="Database" 
         android:onClick = "gotoDatabase"/>
+
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Database_Button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="@string/button_add"
+        android:onClick="gotoAddNew" />
 
 </RelativeLayout>

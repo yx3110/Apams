@@ -47,36 +47,38 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int Camara_Button=0x7f090017;
         public static final int Database_Button=0x7f090018;
         public static final int Map_Button=0x7f090015;
-        public static final int Scan_button=0x7f090005;
-        public static final int action_example=0x7f090019;
-        public static final int action_forgot_password=0x7f09001b;
+        public static final int Scan_button=0x7f090006;
+        public static final int action_example=0x7f09001b;
+        public static final int action_forgot_password=0x7f09001c;
         public static final int action_settings=0x7f09001a;
-        public static final int asset_detail=0x7f090010;
-        public static final int asset_detail_container=0x7f090006;
-        public static final int asset_list=0x7f090007;
+        public static final int asset_detail=0x7f090011;
+        public static final int asset_detail_container=0x7f090007;
+        public static final int asset_list=0x7f090008;
         public static final int button2=0x7f090016;
-        public static final int container=0x7f090012;
-        public static final int drawer_layout=0x7f090011;
-        public static final int email=0x7f09000b;
-        public static final int fullscreen_content=0x7f090000;
-        public static final int fullscreen_content_controls=0x7f090001;
-        public static final int login=0x7f09000d;
-        public static final int login_form=0x7f09000a;
-        public static final int login_status=0x7f090008;
-        public static final int login_status_message=0x7f090009;
+        public static final int button_add=0x7f090019;
+        public static final int container=0x7f090000;
+        public static final int drawer_layout=0x7f090012;
+        public static final int email=0x7f09000c;
+        public static final int fullscreen_content=0x7f090001;
+        public static final int fullscreen_content_controls=0x7f090002;
+        public static final int login=0x7f09000e;
+        public static final int login_form=0x7f09000b;
+        public static final int login_status=0x7f090009;
+        public static final int login_status_message=0x7f09000a;
         public static final int navigation_drawer=0x7f090013;
-        public static final int password=0x7f09000c;
-        public static final int scan_button=0x7f090002;
-        public static final int scan_content=0x7f090004;
-        public static final int scan_format=0x7f090003;
+        public static final int password=0x7f09000d;
+        public static final int scan_button=0x7f090003;
+        public static final int scan_content=0x7f090005;
+        public static final int scan_format=0x7f090004;
         public static final int section_label=0x7f090014;
-        public static final int sign_in_button=0x7f09000e;
-        public static final int testSkip=0x7f09000f;
+        public static final int sign_in_button=0x7f09000f;
+        public static final int testSkip=0x7f090010;
     }
     public static final class layout {
-        public static final int activity_apams_camara=0x7f030000;
-        public static final int activity_apams_map=0x7f030001;
-        public static final int activity_asset_detail=0x7f030002;
+        public static final int activity_apams_add_new=0x7f030000;
+        public static final int activity_apams_camara=0x7f030001;
+        public static final int activity_apams_map=0x7f030002;
+        public static final int activity_asset_detail=0x7f030003;
         /** 
     Layout alias to replace the single-pane version of the layout with a
     two-pane version on Large screens.
@@ -92,47 +94,53 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     http://developer.android.com/training/multiscreen/screensizes.html#TaskUseAliasFilters
     
          */
-        public static final int activity_asset_list=0x7f030003;
-        public static final int activity_asset_twopane=0x7f030004;
-        public static final int activity_login=0x7f030005;
-        public static final int fragment_asset_detail=0x7f030006;
-        public static final int fragment_navigation_drawer=0x7f030007;
-        public static final int main=0x7f030008;
-        public static final int main_frag=0x7f030009;
+        public static final int activity_asset_list=0x7f030004;
+        public static final int activity_asset_twopane=0x7f030005;
+        public static final int activity_login=0x7f030006;
+        public static final int fragment_apams_add_new=0x7f030007;
+        public static final int fragment_asset_detail=0x7f030008;
+        public static final int fragment_navigation_drawer=0x7f030009;
+        public static final int main=0x7f03000a;
+        public static final int main_frag=0x7f03000b;
     }
     public static final class menu {
-        public static final int apams_main=0x7f080000;
-        public static final int global=0x7f080001;
-        public static final int login=0x7f080002;
+        public static final int apams_add_new=0x7f080000;
+        public static final int apams_main=0x7f080001;
+        public static final int global=0x7f080002;
+        public static final int login=0x7f080003;
     }
     public static final class string {
+        public static final int Map=0x7f060015;
         public static final int action_example=0x7f060006;
-        public static final int action_forgot_password=0x7f06001a;
+        public static final int action_forgot_password=0x7f06001e;
         public static final int action_settings=0x7f060007;
-        public static final int action_sign_in_register=0x7f060018;
-        public static final int action_sign_in_short=0x7f060019;
+        public static final int action_sign_in_register=0x7f06001c;
+        public static final int action_sign_in_short=0x7f06001d;
         public static final int app_name=0x7f060000;
+        public static final int button_add=0x7f060016;
         public static final int camera_background=0x7f06000a;
         public static final int camera_content=0x7f060014;
         public static final int camera_format=0x7f060012;
         public static final int camera_scan=0x7f060011;
         public static final int dummy_button=0x7f060009;
         public static final int dummy_content=0x7f060013;
-        public static final int error_field_required=0x7f06001f;
-        public static final int error_incorrect_password=0x7f06001e;
-        public static final int error_invalid_email=0x7f06001c;
-        public static final int error_invalid_password=0x7f06001d;
-        public static final int login_progress_signing_in=0x7f06001b;
+        public static final int error_field_required=0x7f060023;
+        public static final int error_incorrect_password=0x7f060022;
+        public static final int error_invalid_email=0x7f060020;
+        public static final int error_invalid_password=0x7f060021;
+        public static final int hello_world=0x7f060018;
+        public static final int login_progress_signing_in=0x7f06001f;
         public static final int navigation_drawer_close=0x7f060005;
         public static final int navigation_drawer_open=0x7f060004;
         /**  Strings related to login 
          */
-        public static final int prompt_email=0x7f060016;
-        public static final int prompt_password=0x7f060017;
+        public static final int prompt_email=0x7f06001a;
+        public static final int prompt_password=0x7f06001b;
         public static final int title_activity_apams__camara=0x7f06000b;
         public static final int title_activity_apams__map=0x7f060010;
+        public static final int title_activity_apams_add_new=0x7f060017;
         public static final int title_activity_apams_camara=0x7f060008;
-        public static final int title_activity_login=0x7f060015;
+        public static final int title_activity_login=0x7f060019;
         public static final int title_asset_detail=0x7f06000f;
         public static final int title_asset_list=0x7f06000e;
         public static final int title_databaseitem_detail=0x7f06000d;
