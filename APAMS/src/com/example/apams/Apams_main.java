@@ -11,7 +11,9 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class Apams_main extends Activity
@@ -40,6 +42,8 @@ public class Apams_main extends Activity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+        
+
     }
 
     @Override
@@ -96,6 +100,10 @@ public class Apams_main extends Activity
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    public void quitButton(View view){
+    	finish();
     }
     public void gotoLogin(View view){
     	Intent intent =new Intent(this,Apams_LoginActivity.class);
@@ -156,6 +164,8 @@ public class Apams_main extends Activity
             View rootView = inflater.inflate(R.layout.main_frag, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
+            
+            
             return rootView;
         }
 
@@ -165,6 +175,7 @@ public class Apams_main extends Activity
             ((Apams_main) activity).onSectionAttached(
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
+        
     }
 
 }

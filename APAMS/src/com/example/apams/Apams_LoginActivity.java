@@ -90,7 +90,13 @@ public class Apams_LoginActivity extends Activity {
     public void gotoMain(View view){
     	Intent intent = new Intent(this, Apams_main.class);
     	startActivity(intent);
-
+    	finish();
+    }
+    
+    public void gotoRegister(View view){
+    	Intent intent = new Intent(this, Apams_register.class);
+    	startActivity(intent);
+    	finish();
     }
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

@@ -26,5 +26,10 @@
     <string name="button_add">Add new asset</string>
     <string name="title_activity_apams_add_new">Apams_addNewActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="quit_button">Quit</string>
+    <string name="register_button">Register</string>
+    <string name="title_activity_apams_register">Apams_register</string>
+    <string name="register">New User Registration</string>
+    <string name="button_register_confirm">Confirm</string>
 
 </resources>

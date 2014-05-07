@@ -60,6 +60,10 @@
             android:name="com.example.apams.Apams_addNewActivity"
             android:label="@string/title_activity_apams_add_new" >
         </activity>
+        <activity
+            android:name="com.example.apams.Apams_register"
+            android:label="@string/title_activity_apams_register" >
+        </activity>
     </application>
 
 </manifest>

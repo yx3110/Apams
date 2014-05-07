@@ -62,10 +62,16 @@
                 android:singleLine="true" />
 
             <Button
+                android:id="@+id/register_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_button"
+                android:onClick="gotoRegister" />
+
+            <Button
                 android:id="@+id/sign_in_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
                 android:layout_marginTop="16dp"
                 android:paddingLeft="32dp"
                 android:paddingRight="32dp"

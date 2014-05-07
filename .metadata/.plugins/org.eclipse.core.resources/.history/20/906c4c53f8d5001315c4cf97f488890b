@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">APAMS</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_apams_camara">Camara</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="camera_background">Press Scan to scan Barcode</string>
+    <string name="title_activity_apams__camara">Apams_CamaraActivity</string>
+    <string name="title_databaseitem_list">DatabaseItemSet</string>
+    <string name="title_databaseitem_detail">DatabaseItem Detail</string>
+    <string name="title_asset_list">Assets</string>
+    <string name="title_asset_detail">Asset Detail</string>
+    <string name="title_activity_apams__map">Apams_MapActivity</string>
+    <string name="camera_scan">Scan</string>
+    <string name="camera_format">Barcode Type</string>
+    <string name="dummy_content">Dummy</string>
+    <string name="camera_content">Barcode Content</string>
+    <string name="Map">Map</string>
+    <string name="button_add">Add new asset</string>
+    <string name="title_activity_apams_add_new">Apams_addNewActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="quit_button">Quit</string>
+    <string name="register_button">Register</string>
+
+</resources>
