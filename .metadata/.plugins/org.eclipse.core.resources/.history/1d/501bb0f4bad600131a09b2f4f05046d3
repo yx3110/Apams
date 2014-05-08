@@ -78,22 +78,4 @@
         android:text="@string/button_register_confirm"
         android:onClick="confirmRegister" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView1"
-        android:layout_below="@+id/editText_passwordSecond"
-        android:text="College ID" />
-
-    <EditText
-        android:id="@+id/editText_CID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignRight="@+id/editText_passwordSecond"
-        android:layout_below="@+id/textView4"
-        android:ems="10"
-        android:inputType="number" />
-
 </RelativeLayout>
