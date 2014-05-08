@@ -39,6 +39,7 @@ public class Apams_LoginActivity extends Activity {
 	private UserLoginTask mAuthTask = null;
 
 	// Values for email and password at the time of the login attempt.
+	
 	private String mEmail;
 	private String mPassword;
 
@@ -89,6 +90,7 @@ public class Apams_LoginActivity extends Activity {
 	
     public void gotoMain(View view){
     	Intent intent = new Intent(this, Apams_main.class);
+    	intent.putExtra("username", mEmail);
     	startActivity(intent);
     	finish();
     }

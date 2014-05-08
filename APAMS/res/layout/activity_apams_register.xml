@@ -47,7 +47,8 @@
         android:layout_above="@+id/textView1"
         android:layout_alignLeft="@+id/textView1"
         android:layout_alignRight="@+id/editText_passwordFirst"
-        android:ems="10" >
+        android:ems="10"
+        android:inputType="textWebEmailAddress" >
 
         <requestFocus />
     </EditText>
