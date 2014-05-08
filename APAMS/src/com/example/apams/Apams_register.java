@@ -50,7 +50,7 @@ public class Apams_register extends Activity {
 			toast.show();
 		} else {
 			try {
-				Socket client = new Socket();
+				Socket client = new Socket("146.169.53.196",62030);
 				apams_network_package pack = new apams_network_package(
 						usernameStr, password1Str, CIDStr, packageType.REGISTER);
 				OutputStream output = client.getOutputStream();

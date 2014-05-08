@@ -17,5 +17,18 @@ public class apams_network_package implements Serializable {
 		this.CID = CID;
 		this.type = type;
 	}
+	
+	public packageType getType(){
+		return this.type;
+	}
+	public String getUsername(){
+		return this.username;
+	}
+	public String getPassword(){
+		return this.password;
+	}
+	public String getCID(){
+		return this.CID;
+	}
 
 }
