@@ -3,6 +3,7 @@ package com.example.apams;
 import java.io.*;
 import java.net.*;
 
+import com.example.apams.util.apamsTCPclient;
 import com.example.apams.util.apams_network_package;
 import com.example.apams.util.apams_network_package.packageType;
 
@@ -10,6 +11,7 @@ import android.*;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -49,27 +51,17 @@ public class Apams_register extends Activity {
 			Toast toast = Toast.makeText(context, text, duration);
 			toast.show();
 		} else {
-			try {
-				Socket client = new Socket("146.169.53.196",62030);
+			try {								
 				apams_network_package pack = new apams_network_package(
 						usernameStr, password1Str, CIDStr, packageType.REGISTER);
-				OutputStream output = client.getOutputStream();
-				ObjectOutputStream Ooutput = new ObjectOutputStream(output);
-				Ooutput.writeObject(pack);
-
-				BufferedReader in = new BufferedReader(new InputStreamReader(
-						client.getInputStream()));
-				String answer = in.readLine();
-				if(answer.equals("GOOD")){
+				new apamsTCPclient().execute(pack);
+		/*		if(answer.equals("GOOD")){
 					Context context = getApplicationContext();
 					CharSequence text = "Register success!";
 					int duration = Toast.LENGTH_SHORT;
 					Toast toast = Toast.makeText(context, text, duration);
 					toast.show();
-					in.close();
-					Ooutput.close();
-					output.close();
-					client.close();
+
 				}else if(answer.equals("Username already exist")){
 					Context context = getApplicationContext();
 					CharSequence text = "Username already exist,please change username!";
@@ -77,23 +69,18 @@ public class Apams_register extends Activity {
 					Toast toast = Toast.makeText(context, text, duration);
 					toast.show();
 					username.requestFocus();
-					in.close();
-					Ooutput.close();
-					output.close();
-					client.close();
+
 				}else{
 					Context context = getApplicationContext();
 					CharSequence text = "Please try again!";
 					int duration = Toast.LENGTH_SHORT;
 					Toast toast = Toast.makeText(context, text, duration);
 					toast.show();
-					in.close();
-					Ooutput.close();
-					output.close();
-					client.close();
 				}
+*/
+				
 			} catch (Exception e) {
-				System.out.print(e);
+				Log.e("exception", e.getMessage());
 			}
 		}
 	}

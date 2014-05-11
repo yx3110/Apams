@@ -1,0 +1,13 @@
+package com.example.apams.util;
+import java.io.*;
+import java.net.*;
+
+public class apamsTCPclient {
+	
+	private apams_network_package pack;
+	private static final String SERVERIP = "146.169.53.89";
+	private static final int SERVERPORT = 8888;
+	public apamsTCPclient(OnMessageReceived listener){
+		
+	}
+}

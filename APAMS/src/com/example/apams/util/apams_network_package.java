@@ -3,6 +3,7 @@ package com.example.apams.util;
 import java.io.Serializable;
 
 
+@SuppressWarnings("serial")
 public class apams_network_package implements Serializable {
 	public enum packageType{
 		REGISTER,LOGIN,QUERY,IMAGE

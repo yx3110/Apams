@@ -1,0 +1,9 @@
+package com.example.apams.util;
+import java.io.*;
+import java.net.*;
+
+public class apamsTCPclient {
+	public apamsTCPclient(OnMessageReceived listener){
+		
+	}
+}
