@@ -1,0 +1,6 @@
+package com.example.apams.util;
+
+public interface OnTaskCompleted {
+	void onTaskCompleted();
+
+}
