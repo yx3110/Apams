@@ -50,8 +50,6 @@ public class Apams_register extends Activity implements OnTaskCompleted {
 			popMsg("Length of password or username must be shorter than 40 characters!");
 		}else if(password1Str.length()<8){
 			popMsg("Password needs to be at least 8 characters long");
-		}else if(!(CIDStr.length()==8)){
-			popMsg("CID has to be a valid Imperial CID with 8 digits long");
 		}
 		else {
 			try {
@@ -68,14 +66,14 @@ public class Apams_register extends Activity implements OnTaskCompleted {
 	public void onTaskCompleted(String answer) {
 		if (answer.equals("GOOD")) {
 			popMsg("Registration done!");
+
 		} else if (answer.equals("Username already exist")) {
-			popMsg("Username or CID already exist,please change username or CID!");
+			popMsg("Username already exist,please change username!");
 			EditText username = (EditText) findViewById(R.id.editText_username);
 			username.requestFocus();
-		}else if(answer.equals("Error occurred during connection")){
-			popMsg("Connection failed. Server not online");
-		}else {
-			popMsg("Please try again!"+" "+answer);
+
+		} else {
+			popMsg("Please try again!");
 		}
 	}
 

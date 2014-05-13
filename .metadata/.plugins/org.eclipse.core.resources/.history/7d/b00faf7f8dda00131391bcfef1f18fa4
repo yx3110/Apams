@@ -43,17 +43,12 @@ public class Apams_register extends Activity implements OnTaskCompleted {
 			popMsg("Please fill in all the fields!");
 		}
 		if (!password1Str.equals(password2Str)) {
-			popMsg("Password not match!");
-		}else if(!usernameStr.contains("@")){
-			popMsg("Username has to be a valid email!");
-		}else if(usernameStr.length()>40||password1Str.length()>40){
-			popMsg("Length of password or username must be shorter than 40 characters!");
-		}else if(password1Str.length()<8){
-			popMsg("Password needs to be at least 8 characters long");
-		}else if(!(CIDStr.length()==8)){
-			popMsg("CID has to be a valid Imperial CID with 8 digits long");
-		}
-		else {
+			Context context = getApplicationContext();
+			CharSequence text = "Password not match!";
+			int duration = Toast.LENGTH_SHORT;
+			Toast toast = Toast.makeText(context, text, duration);
+			toast.show();
+		} else {
 			try {
 				apams_network_package pack = new apams_network_package(
 						usernameStr, password1Str, CIDStr, packageType.REGISTER);
@@ -68,14 +63,14 @@ public class Apams_register extends Activity implements OnTaskCompleted {
 	public void onTaskCompleted(String answer) {
 		if (answer.equals("GOOD")) {
 			popMsg("Registration done!");
+
 		} else if (answer.equals("Username already exist")) {
-			popMsg("Username or CID already exist,please change username or CID!");
+			popMsg("Username already exist,please change username!");
 			EditText username = (EditText) findViewById(R.id.editText_username);
 			username.requestFocus();
-		}else if(answer.equals("Error occurred during connection")){
-			popMsg("Connection failed. Server not online");
-		}else {
-			popMsg("Please try again!"+" "+answer);
+
+		} else {
+			popMsg("Please try again!");
 		}
 	}
 

@@ -68,14 +68,14 @@ public class Apams_register extends Activity implements OnTaskCompleted {
 	public void onTaskCompleted(String answer) {
 		if (answer.equals("GOOD")) {
 			popMsg("Registration done!");
+
 		} else if (answer.equals("Username already exist")) {
-			popMsg("Username or CID already exist,please change username or CID!");
+			popMsg("Username already exist,please change username!");
 			EditText username = (EditText) findViewById(R.id.editText_username);
 			username.requestFocus();
-		}else if(answer.equals("Error occurred during connection")){
-			popMsg("Connection failed. Server not online");
-		}else {
-			popMsg("Please try again!"+" "+answer);
+
+		} else {
+			popMsg("Please try again!");
 		}
 	}
 

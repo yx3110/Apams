@@ -75,7 +75,7 @@ public class Apams_register extends Activity implements OnTaskCompleted {
 		}else if(answer.equals("Error occurred during connection")){
 			popMsg("Connection failed. Server not online");
 		}else {
-			popMsg("Please try again!"+" "+answer);
+			popMsg("Please try again!");
 		}
 	}
 
