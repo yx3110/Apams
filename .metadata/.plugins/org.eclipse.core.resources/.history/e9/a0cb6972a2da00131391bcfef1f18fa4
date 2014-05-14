@@ -1,0 +1,87 @@
+package com.example.apams;
+
+import com.example.apams.util.OnTaskCompleted;
+import com.example.apams.util.apamsTCPclient;
+import com.example.apams.util.apams_network_package;
+import com.example.apams.util.apams_network_package.packageType;
+
+import android.*;
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+public class Apams_register extends Activity implements OnTaskCompleted {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_apams_register);
+
+	}
+
+	public void confirmRegister(View view) {
+		EditText username = (EditText) findViewById(R.id.editText_username);
+		EditText password1 = (EditText) findViewById(R.id.editText_passwordFirst);
+		EditText password2 = (EditText) findViewById(R.id.editText_passwordSecond);
+		EditText CID = (EditText) findViewById(R.id.editText_CID);
+		String CIDStr = CID.getText().toString();
+		String usernameStr = username.getText().toString();
+		String password1Str = password1.getText().toString();
+		String password2Str = password2.getText().toString();
+		if (password1Str.length() == 0 || usernameStr.length() == 0
+				|| CIDStr.length() == 0) {
+			popMsg("Please fill in all the fields!");
+		}
+		if (!password1Str.equals(password2Str)) {
+			popMsg("Password not match!");
+		}else if(!usernameStr.contains("@")){
+			popMsg("Username has to be a valid email!");
+		}else if(usernameStr.length()>40||password1Str.length()>40){
+			popMsg("Length of password or username must be shorter than 40 characters!");
+		}else if(password1Str.length()<8){
+			popMsg("Password needs to be at least 8 characters long");
+		}else if(!(CIDStr.length()==8)){
+			popMsg("CID has to be a valid Imperial CID with 8 digits long");
+		}
+		else {
+			try {
+				apams_network_package pack = new apams_network_package(
+						usernameStr, password1Str, CIDStr, packageType.REGISTER);
+				new apamsTCPclient(this).execute(pack);
+			} catch (Exception e) {
+				Log.e("exception", e.getMessage());
+			}
+		}
+	}
+
+	@Override
+	public void onTaskCompleted(String answer) {
+		if (answer.equals("GOOD")) {
+			popMsg("Registration done!");
+		} else if (answer.equals("Username already exist")) {
+			popMsg("Username or CID already exist,please change username or CID!");
+			EditText username = (EditText) findViewById(R.id.editText_username);
+			username.requestFocus();
+		}else if(answer.equals("Error occurred during connection")){
+			popMsg("Connection failed. Server not online");
+		}else {
+			popMsg("Please try again!"+" "+answer);
+		}
+	}
+
+	@Override
+	public void popMsg(String msg) {
+		Context context = getApplicationContext();
+		CharSequence text = msg;
+		int duration = Toast.LENGTH_SHORT;
+		Toast toast = Toast.makeText(context, text, duration);
+		toast.show();		
+	}
+}

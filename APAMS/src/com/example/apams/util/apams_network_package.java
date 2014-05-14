@@ -18,6 +18,12 @@ public class apams_network_package implements Serializable {
 		this.type = type;
 	}
 	
+	public apams_network_package(String username,String password,packageType type){
+		this.username = username;
+		this.password = password;
+		this.type = type;
+	}
+	
 	public packageType getType(){
 		return this.type;
 	}

@@ -8327,3 +8327,6 @@ Binding(CTRL+SHIFT+ARROW_LEFT,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.wst.sse.ui.structuredTextEditorScope,,cocoa,system)
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2014-05-14 15:50:17.108
+!MESSAGE activity_login.xml: Couldn't resolve resource @string/action_sign_in_register

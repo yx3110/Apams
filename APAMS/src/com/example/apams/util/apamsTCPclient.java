@@ -3,10 +3,8 @@ package com.example.apams.util;
 import java.io.*;
 import java.net.*;
 
-import android.content.Context;
 import android.os.AsyncTask;
 import android.util.*;
-import android.widget.Toast;
 
 public class apamsTCPclient extends
 		AsyncTask<apams_network_package, Integer, String> {

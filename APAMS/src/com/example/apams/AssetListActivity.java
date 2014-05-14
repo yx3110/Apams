@@ -27,11 +27,13 @@ public class AssetListActivity extends FragmentActivity implements
 	 * device.
 	 */
 	private boolean mTwoPane;
-
+	private String user;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_asset_list);
+		Intent i = getIntent();
+		this.user = i.getStringExtra("username");
 
 		if (findViewById(R.id.asset_detail_container) != null) {
 			// The detail container view will be present only in the

@@ -1,11 +1,16 @@
 package com.example.apams;
 
+import com.example.apams.util.OnTaskCompleted;
+import com.example.apams.util.apamsTCPclient;
+import com.example.apams.util.apams_network_package;
+import com.example.apams.util.apams_network_package.packageType;
+
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,18 +20,13 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Activity which displays a login screen to the user, offering registration as
  * well.
  */
-public class Apams_LoginActivity extends Activity {
-	/**
-	 * A dummy authentication store containing known user names and passwords.
-	 * TODO: remove after connecting to a real authentication system.
-	 */
-	private static final String[] DUMMY_CREDENTIALS = new String[] {
-			"foo@example.com:hello", "bar@example.com:world" };
+public class Apams_LoginActivity extends Activity implements OnTaskCompleted {
 
 	/**
 	 * The default email to populate the email field with.
@@ -36,7 +36,7 @@ public class Apams_LoginActivity extends Activity {
 	/**
 	 * Keep track of the login task to ensure we can cancel it if requested.
 	 */
-	private UserLoginTask mAuthTask = null;
+	private apamsTCPclient mAuthTask = null;
 
 	// Values for email and password at the time of the login attempt.
 	
@@ -98,7 +98,6 @@ public class Apams_LoginActivity extends Activity {
     public void gotoRegister(View view){
     	Intent intent = new Intent(this, Apams_register.class);
     	startActivity(intent);
-    	finish();
     }
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -159,8 +158,9 @@ public class Apams_LoginActivity extends Activity {
 			// perform the user login attempt.
 			mLoginStatusMessageView.setText(R.string.login_progress_signing_in);
 			showProgress(true);
-			mAuthTask = new UserLoginTask();
-			mAuthTask.execute((Void) null);
+			apams_network_package pack = new apams_network_package(mEmail,mPassword,packageType.LOGIN);
+			mAuthTask = new apamsTCPclient(this);
+			mAuthTask.execute(pack);
 		}
 	}
 
@@ -205,52 +205,28 @@ public class Apams_LoginActivity extends Activity {
 		}
 	}
 
-	/**
-	 * Represents an asynchronous login/registration task used to authenticate
-	 * the user.
-	 */
-	public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
-		@Override
-		protected Boolean doInBackground(Void... params) {
-			// TODO: attempt authentication against a network service.
-
-			try {
-				// Simulate network access.
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				return false;
-			}
-
-			for (String credential : DUMMY_CREDENTIALS) {
-				String[] pieces = credential.split(":");
-				if (pieces[0].equals(mEmail)) {
-					// Account exists, return true if the password matches.
-					return pieces[1].equals(mPassword);
-				}
-			}
-
-			// TODO: register the new account here.
-			return true;
+	@Override
+	public void onTaskCompleted(String answer) {
+		if(answer.equals("GOOD")){
+			Intent intent = new Intent(this, Apams_main.class);
+	    	intent.putExtra("username", mEmail);
+	    	startActivity(intent);
+	    	finish();
+		}else if(answer.equals("Wrong email")){
+			popMsg("Wrong email address");
+			mEmailView.requestFocus();
+		}else{
+			popMsg("Wrong password");
+			mPasswordView.requestFocus();
 		}
+	}
 
-		@Override
-		protected void onPostExecute(final Boolean success) {
-			mAuthTask = null;
-			showProgress(false);
-
-			if (success) {
-				finish();
-			} else {
-				mPasswordView
-						.setError(getString(R.string.error_incorrect_password));
-				mPasswordView.requestFocus();
-			}
-		}
-
-		@Override
-		protected void onCancelled() {
-			mAuthTask = null;
-			showProgress(false);
-		}
+	@Override
+	public void popMsg(String msg) {
+		Context context = getApplicationContext();
+		CharSequence text = msg;
+		int duration = Toast.LENGTH_SHORT;
+		Toast toast = Toast.makeText(context, text, duration);
+		toast.show();				
 	}
 }

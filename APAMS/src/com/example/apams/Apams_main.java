@@ -28,6 +28,8 @@ public class Apams_main extends Activity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
+    
+    private String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +40,7 @@ public class Apams_main extends Activity
                 getFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
         Intent i = getIntent();
-        String user = i.getExtras().getString("username");
+        this.user = i.getExtras().getString("username");
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
@@ -109,22 +111,26 @@ public class Apams_main extends Activity
     public void gotoLogin(View view){
     	Intent intent =new Intent(this,Apams_LoginActivity.class);
     	startActivity(intent);
+    	finish();
     }
     
     public void gotoAddNew(View view){
     	Intent intent = new Intent(this, Apams_addNewActivity.class);
+    	intent.putExtra("username", user);
     	startActivity(intent);
     }
     
     //start the camera activity;
     public void gotoCamara(View view){
     	Intent intent = new Intent(this, Apams_CamaraActivity.class);
+    	intent.putExtra("username", user);
     	startActivity(intent);
     }
     
     //start the database activity;
     public void gotoDatabase(View view){
     	Intent intent = new Intent(this, AssetListActivity.class);
+    	intent.putExtra("username", user);
     	startActivity(intent);
     }
     

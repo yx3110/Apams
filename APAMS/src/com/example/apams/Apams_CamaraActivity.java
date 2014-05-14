@@ -1,6 +1,5 @@
 package com.example.apams;
 
-import com.google.zxing.*;
 import com.example.apams.util.SystemUiHider;
 
 import android.annotation.TargetApi;
@@ -51,11 +50,14 @@ public class Apams_CamaraActivity extends Activity {
 
 	private Button scanButton;
 	private TextView formatTxt, contentTxt;
-
+	
+	
+	private String user;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		Intent i = getIntent();
+		this.user = i.getStringExtra("username");
 		setContentView(R.layout.activity_apams_camara);
 
 		final View controlsView = findViewById(R.id.fullscreen_content_controls);

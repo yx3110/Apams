@@ -3,6 +3,7 @@ package com.example.apams;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -13,10 +14,14 @@ import android.os.Build;
 
 public class Apams_addNewActivity extends Activity {
 
+	private String user;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_apams_add_new);
+		
+		Intent i = getIntent();
+		this.user = i.getStringExtra("username");
 
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()
