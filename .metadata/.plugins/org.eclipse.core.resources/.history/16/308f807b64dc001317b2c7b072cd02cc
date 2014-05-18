@@ -1,0 +1,93 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="com.example.apams.addNewActivity" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="285dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/addNewName"
+                android:layout_width="292dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="@string/Item_name"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/addCID"
+                android:layout_width="292dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="@string/addCID"
+                android:inputType="number"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/addRoom"
+                android:layout_width="292dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:hint="@string/addRoom"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/addChooseType"
+                android:layout_width="292dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/addType"
+                android:onClick="chooseItemType"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <RelativeLayout android:layout_width="match_parent" >
+
+            <Button
+                android:id="@+id/addConfirm"
+                android:layout_width="292dp"
+                android:layout_height="wrap_content" />
+
+            <Button 
+                android:layout_width="match_parent" />
+            
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/login_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/addNew_status_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/addNew_progress_signing_in"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+</merge>

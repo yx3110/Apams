@@ -31,5 +31,11 @@
     <string name="title_activity_apams_register">Apams_register</string>
     <string name="register">New User Registration</string>
     <string name="button_register_confirm">Confirm</string>
+    <string name="Item_name">New Item Name</string>
+    <string name="addNew_progress_signing_in">Adding new item</string>
+    <string name="addCID">CID</string>
+    <string name="addType">Choose Type of Item</string>
+    <string name="addRoom">Room of Item</string>
+    <string name="addPic">Add a Picture of Asset</string>
 
 </resources>

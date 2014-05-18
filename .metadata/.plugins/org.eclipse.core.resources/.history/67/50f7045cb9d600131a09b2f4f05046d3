@@ -1,9 +1,0 @@
-package com.example.apams.util;
-
-import java.io.Serializable;
-
-public class apams_network_package implements Serializable {
-	private boolean isQuery;
-	
-
-}

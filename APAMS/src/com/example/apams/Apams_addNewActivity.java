@@ -2,7 +2,9 @@ package com.example.apams;
 
 import android.app.Activity;
 import android.app.ActionBar;
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,23 +12,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.os.Build;
+import android.provider.MediaStore;
 
 public class Apams_addNewActivity extends Activity {
-
+	private String itemType;
 	private String user;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_apams_add_new);
-		
+
 		Intent i = getIntent();
 		this.user = i.getStringExtra("username");
 
-		if (savedInstanceState == null) {
-			getFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
-		}
 	}
 
 	@Override
@@ -47,6 +48,28 @@ public class Apams_addNewActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	public void newPic(View view) {
+		Intent intent = new Intent();
+		intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+		intent.addCategory(Intent.CATEGORY_DEFAULT);
+	}
+
+	public void chooseItemType(View view) {
+
+		final String[] choices = new String[] { "PC", "Printer", "Mac",
+				"Others" };
+		new AlertDialog.Builder(this).setTitle("Choose Item type")
+				.setIcon(android.R.drawable.ic_dialog_info)
+				.setItems(choices, new DialogInterface.OnClickListener() {
+
+					public void onClick(DialogInterface dialog, int which) {
+						itemType = choices[which];
+					}
+				}).setNegativeButton("Cancel", null).show();
+		Button chooseButton = (Button) findViewById(R.id.addChooseType);
+		chooseButton.setHint(itemType);
 	}
 
 	/**
